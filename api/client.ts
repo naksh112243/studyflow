@@ -1,6 +1,14 @@
 import { StudyFlowSnapshot } from '@/storage/types';
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_STUDYFLOW_API_URL ?? '/api';
+const getApiBaseUrl = (): string => {
+  const url = process.env.NEXT_PUBLIC_STUDYFLOW_API_URL;
+  if (!url || url.includes('example.com')) {
+    return '/api';
+  }
+  return url;
+};
+
+const API_BASE_URL = getApiBaseUrl();
 
 async function request(path: string, init: RequestInit = {}) {
   const response = await fetch(`${API_BASE_URL}${path}`, {

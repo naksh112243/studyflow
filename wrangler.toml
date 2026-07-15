@@ -4,5 +4,5 @@ main = "workers/index.ts"
 
 [[d1_databases]]
 binding = "DB"
-database_name = "studyflow_db"
-database_id = "00000000-0000-0000-0000-000000000000"
+database_name = "studyflow-db"
+database_id = "a9c6fde5-cf9e-499d-b3d9-4756f451b806"

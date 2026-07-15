@@ -2,10 +2,10 @@
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 
-export default function Error({
+export default function ErrorPage({
   reset,
 }: {
-  error: Error & { digest?: string };
+  error: globalThis.Error & { digest?: string };
   reset: () => void;
 }) {
   return (
