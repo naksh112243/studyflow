@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StudyFlow</title>
+    <meta name="description" content="A calm, local-first study planner powered by a scheduling engine that keeps the UI focused on what to study right now." />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="apple-touch-icon" href="/apple-icon.svg" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <script>
+      (function () {
+        try {
+          var storedTheme = window.localStorage.getItem('studyflow-theme') || 'natural';
+          document.documentElement.classList.remove('light', 'dark', 'natural');
+          document.documentElement.classList.add(storedTheme);
+        } catch (error) {
+          document.documentElement.classList.add('natural');
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">
+      Skip to content
+    </a>
+    <div id="root"></div>
+    <script type="module" src="/main.tsx"></script>
+  </body>
+</html>
